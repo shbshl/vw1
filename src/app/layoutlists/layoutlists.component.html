@@ -1,0 +1,10 @@
+<h2>Известные раскладки</h2>
+
+<ul class="list-group">
+  <li *ngFor="let layout of layoutList; let i=index;"
+      class="list-group-item"
+      (click)="onClick(layout.id)">
+    {{layout.name}}
+    <span class="badge badge-light">{{layout.id}}</span>
+  </li>
+</ul>

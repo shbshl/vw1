@@ -1,0 +1,32 @@
+<h2>Камеры в раскладке {{layoutName}}</h2>
+<ul class="list-group">
+  <li *ngFor="let camera of cameraList; let i=index;"
+    class="list-group-item">
+    {{camera.NAME}}
+    <span class="badge badge-light">{{camera.CODE}}</span>
+    <button type="button" class="btn btn-primary" (click)="onDelete(camera.CODE)">Удалить</button>
+  </li>
+</ul>
+<br>
+
+<div *ngIf="cameraList.length>0"
+  class="input-group mb-3">
+  <input
+    [(ngModel)]="layoutName"
+    type="text"
+    class="form-control"
+    placeholder="Название раскладки"
+    aria-label="Название раскладки"
+    aria-describedby="basic-addon1">
+</div>
+
+<button *ngIf="cameraList.length>0"
+  [disabled]="layoutName == null"
+  type="button"
+  class="btn btn-primary"
+  (click)="onSaveLayout()">Save layout</button>
+
+<div *ngIf="server_response != null">
+  Response ID of ceated layout is : {{server_response}}
+</div>
+
