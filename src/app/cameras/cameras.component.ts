@@ -10,6 +10,8 @@ import {LayoutService} from '../layout/layout.service';
 })
 export class CamerasComponent implements OnInit {
 
+  searchCriteria = '';
+
   constructor(public camerasService: CamerasService, private layoutService: LayoutService) {
   }
 

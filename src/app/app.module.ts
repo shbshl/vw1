@@ -11,6 +11,7 @@ import {LayoutComponent} from './layout/layout.component';
 import {LayoutlistsComponent} from './layoutlists/layoutlists.component';
 import {MaterialModule} from './material-module/material.module';
 import { MatComponent } from './mat/mat.component';
+import { CamerasFilterPipe } from './cameras/cameras-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatComponent } from './mat/mat.component';
     CamerasComponent,
     LayoutComponent,
     LayoutlistsComponent,
-    MatComponent
+    MatComponent,
+    CamerasFilterPipe
   ],
   imports: [
     BrowserModule,

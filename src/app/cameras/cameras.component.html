@@ -1,8 +1,12 @@
 <h2> Список камер </h2>
 
+<div class="filter">
+  <input type="text" [(ngModel)]="searchCriteria" placeholder="Quick search">
+ <p>
+</div>
 
 <ul class="list-group">
-  <li *ngFor="let camera of camerasService.cameras | async; let i=index;"
+  <li *ngFor="let camera of (camerasService.cameras | async  | camerasFilter:searchCriteria); let i=index;"
       class="list-group-item"
       (click)="onClick(camera.CODE, i)">
     {{camera.NAME}}
