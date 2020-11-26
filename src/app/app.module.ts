@@ -1,13 +1,16 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {CamerasComponent} from './cameras/cameras.component';
-import {HttpClientModule} from '@angular/common/http';
-import { LayoutComponent } from './layout/layout.component';
-import {FormsModule} from '@angular/forms';
-import { LayoutlistsComponent } from './layoutlists/layoutlists.component';
+import {LayoutComponent} from './layout/layout.component';
+import {LayoutlistsComponent} from './layoutlists/layoutlists.component';
+import {MaterialModule} from './material-module/material.module';
+import { MatComponent } from './mat/mat.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { LayoutlistsComponent } from './layoutlists/layoutlists.component';
     HeaderComponent,
     CamerasComponent,
     LayoutComponent,
-    LayoutlistsComponent
+    LayoutlistsComponent,
+    MatComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

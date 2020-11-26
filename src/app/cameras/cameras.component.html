@@ -1,9 +1,12 @@
 <h2> Список камер </h2>
+
+
 <ul class="list-group">
-  <li *ngFor="let camera of cameraList; let i=index;"
+  <li *ngFor="let camera of camerasService.cameras | async; let i=index;"
       class="list-group-item"
       (click)="onClick(camera.CODE, i)">
     {{camera.NAME}}
     <span class="badge badge-light">{{camera.CODE}}</span>
   </li>
 </ul>
+

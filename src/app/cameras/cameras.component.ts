@@ -9,20 +9,20 @@ import {LayoutService} from '../layout/layout.service';
   styleUrls: ['./cameras.component.css']
 })
 export class CamerasComponent implements OnInit {
-  cameraList: Camera[] = [];
 
-  constructor(private cameras_service: CamerasService, private layoutService: LayoutService) {
+  constructor(public camerasService: CamerasService, private layoutService: LayoutService) {
   }
 
   ngOnInit(): void {
-    this.cameras_service.getAll().subscribe( cameras => {
-      this.cameraList = <Camera[]>(cameras);
-    })
+    this.camerasService.getAll()
+      .subscribe();
   }
 
-  onClick(code:string, index: number) {
-    this.layoutService.addToWall(code)
+  onClick(code: string, index: number) {
+    this.layoutService.addToWall(code);
   }
+
+
 }
 
 
